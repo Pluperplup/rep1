@@ -1,6 +1,9 @@
 .d1 {
     background-color: blueviolet;
-    height: 100px;
-    width: 100px;
+    display: grid;
+}
+
+.d2 {
+    display: block;
 }
 
