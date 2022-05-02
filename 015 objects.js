@@ -9,57 +9,55 @@
 // console.log( f(a, b) );
 
 function Animal(name, weight) {
-    this.name = name;
-    this.weight = weight;
-    this.voice = "silent";
+  this.name = name; // первое обращение name, это название обращения ко внутренностям класса(локальный доступ)
+  this.weight = weight;
+  this.voice = "silent";
 
-    this.getName = function() {
-        return this.name;
+  this.getName = function () {//функция пренадлежит классу
+    return this.name; //обращение(аозвращение) к локальным данным
+  };
+
+  this.getWeight = function () {
+    return this.weight;
+  };
+
+  this.setVoice = function (currVoice) {
+    let len = currVoice.trim().length;
+    if (typeof currVoice == "String" && len > 0) {
+      this.voice = currVoice;
     }
+    throw "Incorrect animal name";
+  };
 
-    this.getWeight = function() {
-        return this.weight
-    }
-
-    this.setVoice = function(currVoice) {
-        let len = currVoice.trim().length;
-        if(typeof currVoice == "String" && len > 0){
-            this.voice = currVoice;
-        }
-        throw "Incorrect animal name"
-    }
-
-    sound = () => console.log(this.voice);
-
-    return {
-        getSound: sound
-    }
+  sound = () => console.log(this.voice);
+  return {
+    getSound: sound,
+  }
 }
 
-Animal.prototype.getVoice = function() {
-    return this.voice;
-}
-
+Animal.prototype.getVoice = function () {
+  return this.voice;
+};
 
 let goGo = false;
-while(!goGo) {
-    try {
-        let dog = new Animal("dog", 25);
-        // let newName = prompt("Input name:");
-        // dog.setVoice(newName);
-        dog.getSound();
-        goGo = true;
-    } catch (error) {
-        console.log("Errors catched!" + error.toString());
-        goGo = true; // change to false
-    }
+while (!goGo) {
+  try {
+    let dog = new Animal("dog", 25);
+    // let newName = prompt("Input name:");
+    // dog.setVoice(newName);
+    dog.getSound();
+    goGo = true;
+  } catch (error) {
+    console.log("Errors catched!" + error.toString());
+    goGo = true; // change to false
+  }
 }
-
 
 // console.log( dog.getName() );
 // console.log( dog.getVoice() );
-// dog.setVoice("Gav");
+dog.setVoice("Gav");
+console.log(dog.getSound());
 // console.log( dog.getVoice() );
 
 // split trim substring concat endsWith includes indexOf replace()
-// search() slice() touppercase tolowercase 
+// search() slice() touppercase tolowercase

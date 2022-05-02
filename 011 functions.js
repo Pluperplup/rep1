@@ -27,15 +27,14 @@ function sum2strings(str1, str2) {
 let someFunction = function() {
     console.log("someFunction called!");
 }
-someFunction();
+// someFunction();
 
-console.log(getCurrTime());
-console.log(sum2strings(str1, str2));
-console.log(sum2strings);
+// console.log(getCurrTime());
+// console.log(sum2strings(str1, str2));
+// console.log(sum2strings);
 
 
 // anonimus fumction
-(function (){
-    console.log("!!!!!");
-})();
-
+// (function (){
+//     console.log("!!!!!");
+// })();

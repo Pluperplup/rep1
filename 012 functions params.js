@@ -18,3 +18,10 @@ function sum(prefix, ...incomeNums) {
 
 const s = sum('Сумма чисел', 1, 67, 45, 9, 13, 45, 0, 62);
 console.log(s);
+
+// params pseudo array
+function func1(a, b, c) {
+    console.log(arguments[0]);
+    console.log(arguments[2]);
+}
+func1(1, 2, 3);

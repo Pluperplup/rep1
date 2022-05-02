@@ -30,3 +30,11 @@ console.log(+z + +x); // 80
 console.log(z + "" + x); // 80
 
 a = 10;
+
+
+// boolean chain
+((true && true) && true) && false = false
+(true && false) && true && false
+
+false || false || false  || true = true 
+(false || true) || false  || false 
