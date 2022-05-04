@@ -8,78 +8,28 @@
   </head>
   <body>
     <script>
-      // let a = [];
-      // for (let b = 0; b <= 50000000; b++) {
-      //   a.push(b);
-      // }
-
-      // // const start1 = new Date().getTime();
-      // // let c = a.slice();
-      // // const end1 = new Date().getTime();
-      // // alert(`${end1 - start1}ms`);
-
-      // // const start2 = new Date().getTime();
-      // // let d = [...a];
-      // // const end2 = new Date().getTime();
-      // // alert(`${end2 - start2}ms`);
-
-      // const start3 = new Date().getTime();
-      // for (let b = 0; b <= 50000000; b++) {
-      //   a.push(b);
-      // }
-      // const end3 = new Date().getTime();
-      // alert(`${end3 - start3}ms`);
-
-      let a1 = confirm("Do you want to create new account ?");
-      let c = true;
-
-      if (c == a1) {
-        let b = new User(prompt("Enter your name :"));
-        alert(`Your name is ${b.getName()}`);
-        alert(`Your email is ${b.getEmail()}`);
-        alert(`Your birthday is ${b.getBirthday()}`);
+      let a = [];
+      for (let b = 0; b <= 50000000; b++) {
+        a.push(b);
       }
 
-      function User(name, email, birthday ) {
-        setName = () => {
-          if (name.trim() != "" && name.endsWith("er") == false) {
-            return (name = name.trim());
-          }
-          throw "Invalid data";
-        };
+      const start1 = new Date().getTime();
+      let c = a.slice();
+      const end1 = new Date().getTime();
+      alert(`${end1 - start1}ms`);
 
-        let a2 = confirm("Do you want to continue registration ?");
-        if (a2 == true) {
-          email = prompt("Enter your email :", "@gmail.com");
-        }
+      const start2 = new Date().getTime();
+      let d = [...a];
+      const end2 = new Date().getTime();
+      alert(`${end2 - start2}ms`);
 
-        setEmail = () => {
-          email = email.trim();
-          if (email.length > 10  && email.endsWith("@gmail.com") == true) {
-            return (email = email.trim());
-          }
-          throw "Invalid data";
-        };
-
-        let a3 = confirm("Do you want to continue registration ?");
-        if (a3 == true) {
-          birthday = prompt("Enter your birthday:" , "--.--.----");
-        }
-
-        setBirthday = () => {
-          birthday = birthday.trim();
-          if (birthday != "") {
-            return (birthday = birthday.split("."));
-          }
-          throw "Invalid data";
-        };
-
-        return {
-          getName: setName,
-          getEmail: setEmail,
-          getBirthday: setBirthday,
-        };
+      const start3 = new Date().getTime();
+      for (let b = 0; b <= 50000000; b++) {
+        a.push(b);
       }
+      const end3 = new Date().getTime();
+      alert(`${end3 - start3}ms`);
+      
     </script>
   </body>
 </html>

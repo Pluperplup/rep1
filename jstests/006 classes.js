@@ -5,33 +5,47 @@ if (c == a) {
   let b = new User(prompt("Enter your name :"));
   alert(`Your name is ${b.getName()}`);
   alert(`Your email is ${b.getEmail()}`);
+  alert(`Your birthday is ${b.getBirthday()}`);
 }
 
 function User(name, email, birthday) {
-  setName = () => {
-    if (name.trim() != "" && name.endsWith("er") == false) {
-      return (name = name.trim());
-    }
-    throw "Invalid data";
+  let _name, _email, _birthday
+
+  setName = (newName) => {
+    newName = newName.trim();
+    if (newName != "") _name = newName;
+    throw "Invalid user name";
   };
 
-  let a2 = confirm("Do you want to continue registration ?");
-  if (a2 == true) {
-    email = prompt("Enter your email :");
-  }
+  setEmail = (newEmail) => {
+    newEmail = newEmail.trim();
+    if (newEmail.length > 5) _email = newEmail
+    throw "Invalid email";
+  };
 
-  setEmail = () => {
-    if (email.trim() != "" && email.endsWith("@gmail.com") == true) {
-      return (email = email.trim());
+  setBirthday = () => {
+    birthday = birthday.trim();
+    if (birthday != "") {
+      return (birthday = birthday.split("."));
     }
     throw "Invalid data";
   };
 
   return {
-    getName: setName,
-    getEmail : setEmail,
+    setName,
+    setEmail,
+    setBirthday
   };
 }
+
+let a2 = confirm("Do you want to continue registration ?");
+if (a2 == true) {
+  email = prompt("Enter your email :", "@gmail.com");
+}
+
+
+let user = new User("user name");
+user.setName("New name");
 
 // let a = confirm("Do you want to create new account ?");
 // let c = true;
