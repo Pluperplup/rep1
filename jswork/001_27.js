@@ -4,3 +4,4 @@ function HorizonDistance(h) {
 }
 
 console.log(`${HorizonDistance()} metres`);
+ 

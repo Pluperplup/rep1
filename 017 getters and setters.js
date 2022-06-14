@@ -34,5 +34,5 @@ console.log("Name is", usr._name);
 console.log("Name is", usr.getName());
 
 console.log("Name is", usr.name);
-usr.name = "    New name   ";
-console.log("Name is", usr.name);
+usr.name = "    New name   ";//set
+console.log("Name is", usr.name);//get

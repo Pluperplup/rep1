@@ -41,3 +41,29 @@ newObj = JSON.parse(JSON.stringify(obj));
 obj.name = "Ara";
 obj.address.ap = 90;
 console.log(newObj.address);
+
+
+
+
+
+let user = {
+    name : "Tim",
+      local : {
+        id : 24324
+      }
+  }
+  
+  for( let key in user.local){
+    console.log(user.local[key])
+  }
+  
+  let clone = Object.assign({} , user , user.local)
+  
+  for(t in clone){
+    if(typeof(clone[t]) == "object"){
+      continue
+    } else {
+      console.log(t);
+      console.log(clone[t]);
+    }
+  }

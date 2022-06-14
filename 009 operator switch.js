@@ -8,7 +8,7 @@ switch(income) {
         break;
     case 2:
     case "2":
-        console.log("number wasinput");
+        console.log("number was input");
     case "two":
         res = "два";
         break;
